@@ -21,5 +21,15 @@ namespace Compactor.Screens
         {
             Application.Exit();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchArchivesPath();
+        }
+        private void SearchArchivesPath()
+        { 
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+        }
     }
 }

@@ -9,3 +9,14 @@ C:\Users\leonardoleal.CONCILIG\source\repos\Compactor\Compactor\bin\Debug\Compac
 C:\Users\leonardoleal.CONCILIG\source\repos\Compactor\Compactor\bin\Debug\Compactor.pdb
 C:\Users\leonardoleal.CONCILIG\source\repos\Compactor\Compactor\obj\Debug\Compactor.exe
 C:\Users\leonardoleal.CONCILIG\source\repos\Compactor\Compactor\obj\Debug\Compactor.pdb
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\bin\Debug\Compactor.exe.config
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\bin\Debug\Compactor.exe
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\bin\Debug\Compactor.pdb
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.csproj.AssemblyReference.cache
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.Properties.Resources.resources
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.Screens.frmPrincipal.resources
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.csproj.GenerateResource.cache
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.csproj.CoreCompileInputs.cache
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.exe
+C:\Users\Leonardo Leal\Source\Repos\Compactor\Compactor\obj\Debug\Compactor.pdb

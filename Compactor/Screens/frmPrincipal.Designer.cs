@@ -54,6 +54,7 @@
             this.btnSearch.Size = new System.Drawing.Size(37, 33);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtPath
             // 
@@ -141,21 +142,31 @@
             // 
             // btnStart
             // 
+            this.btnStart.BackColor = System.Drawing.Color.White;
+            this.btnStart.FlatAppearance.BorderSize = 2;
+            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStart.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(591, 241);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(197, 33);
             this.btnStart.TabIndex = 14;
             this.btnStart.Text = "Processar";
-            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnStart.UseVisualStyleBackColor = false;
             // 
             // btnErase
             // 
+            this.btnErase.BackColor = System.Drawing.Color.White;
+            this.btnErase.FlatAppearance.BorderSize = 2;
+            this.btnErase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnErase.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnErase.Location = new System.Drawing.Point(591, 280);
             this.btnErase.Name = "btnErase";
             this.btnErase.Size = new System.Drawing.Size(197, 33);
             this.btnErase.TabIndex = 15;
             this.btnErase.Text = "Limpar";
-            this.btnErase.UseVisualStyleBackColor = true;
+            this.btnErase.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnErase.UseVisualStyleBackColor = false;
             // 
             // btnExit
             // 
