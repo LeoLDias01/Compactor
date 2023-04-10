@@ -64,6 +64,9 @@ namespace Compactor.Screens
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            if (txtPath.Text.Length > 0) 
+                return;
+
             if (MessageBox.Show("Preparando Para Compactar!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 if (MessageBox.Show("Deseja realmente compactar os arquivos deste diretório?", "AVISO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -109,7 +112,7 @@ namespace Compactor.Screens
         {
             Cursor.Current = Cursors.Default;
             lblProcessing.Visible = false;
-            btnStart.Enabled = false;
+            btnStart.Enabled = true;
             this.Enabled = true;
         }
     }
