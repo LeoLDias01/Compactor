@@ -16,15 +16,24 @@ namespace Compactor.Screens
 {
     public partial class frmPrincipal : Form
     {
+        #region ..:: Variables ::..
+
         FileInfo[] archive;
         string fileName;
+
+        #endregion
+
+        #region ..:: Constructor ::..
         public frmPrincipal()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region ..:: Events ::..
         private void btnExit_Click(object sender, EventArgs e)
         {
+            // Exit
             Application.Exit();
         }
 
@@ -32,31 +41,11 @@ namespace Compactor.Screens
         {
             SearchArchivesPath();
         }
-        private void SearchArchivesPath()
-        { 
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            if (folderBrowser.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
-            txtPath.Text = folderBrowser.SelectedPath;
-
-            ltbArchives.Items.Clear();
-            DirectoryInfo dir = new DirectoryInfo(txtPath.Text);
-            archive = dir.GetFiles("*", SearchOption.TopDirectoryOnly);
-            foreach (FileInfo item in archive)
-            {
-               // Retira o diretório informado inicialmente
-               fileName = item.FullName.Replace(dir.FullName, "").Remove(0, 1);
-               ltbArchives.Items.Add(fileName);
-               lblArchivesQtt.Text = "Total: " + ltbArchives.Items.Count;
-            }
-            if (ltbArchives.Items.Count > 0)
-                btnStart.Enabled = true;
-            else
-                btnStart.Enabled = false;
-        }
-
         private void btnErase_Click(object sender, EventArgs e)
         {
-            ltbArchives.DataSource = null;
+            // Cleaning all fields
+
+            ltbFiles.Items.Clear();
             txtPath.Clear();
             chkEraseOriginals.Checked = false;
             chkUnique.Checked = false;
@@ -64,22 +53,27 @@ namespace Compactor.Screens
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (txtPath.Text.Length > 0) 
+            // Verifying path   
+            if (txtPath.Text.Length > 0)
                 return;
 
             if (MessageBox.Show("Preparando Para Compactar!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 if (MessageBox.Show("Deseja realmente compactar os arquivos deste diretório?", "AVISO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    StartProcess();
+                    Cursor.Current = Cursors.WaitCursor;
+                    FieldsActivation(labelProcessing: true, startButton: false, formEnable: false);
 
                     if (chkUnique.Checked)
                     {
+                        // Taking folder path to create just one archive, then archives are added on zip file 
                         using (ZipArchive zip = ZipFile.Open($"{txtPath.Text}.zip", ZipArchiveMode.Create))
                         {
                             foreach (FileInfo files in archive)
                             {
                                 zip.CreateEntry(files.Name);
+
+                                // Deleting original files
                                 if (chkEraseOriginals.Checked)
                                     File.Delete(files.FullName);
                             }
@@ -89,31 +83,53 @@ namespace Compactor.Screens
                     {
                         foreach (FileInfo files in archive)
                         {
-                            using (ZipArchive zip = ZipFile.Open($"{files.DirectoryName}\\{files.Name.Remove(files.Name.Length-4)}.zip", ZipArchiveMode.Create))
+                            // Generating zip file to all files 
+                            using (ZipArchive zip = ZipFile.Open($"{files.DirectoryName}\\{files.Name.Remove(files.Name.Length - 4)}.zip", ZipArchiveMode.Create))
                             {
                                 zip.CreateEntry(files.Name);
                             }
+                            // Deleting original files
                             if (chkEraseOriginals.Checked)
                                 File.Delete(files.FullName);
                         }
                     }
                 }
             }
-            EndProcess();
+            Cursor.Current = Cursors.Default;
+            FieldsActivation(labelProcessing: true, startButton: false, formEnable: false);
         }
-        private void StartProcess() 
+        #endregion
+
+        #region ..:: General Methods ::..
+        private void SearchArchivesPath()
+        { 
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            if (folderBrowser.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+            txtPath.Text = folderBrowser.SelectedPath;
+
+            ltbFiles.Items.Clear();
+            DirectoryInfo dir = new DirectoryInfo(txtPath.Text);
+            archive = dir.GetFiles("*", SearchOption.TopDirectoryOnly);
+            foreach (FileInfo item in archive)
+            {
+               // Show File name
+               fileName = item.FullName.Replace(dir.FullName, "").Remove(0, 1);
+               ltbFiles.Items.Add(fileName);
+               lblFilesQtt.Text = "Total: " + ltbFiles.Items.Count;
+            }
+            if (ltbFiles.Items.Count > 0)
+                btnStart.Enabled = true;
+            else
+                btnStart.Enabled = false;
+        }  
+        // Enable/Disable Fields
+        private void FieldsActivation(bool labelProcessing, bool startButton, bool formEnable) 
         {
-            Cursor.Current = Cursors.WaitCursor;
             lblProcessing.Visible = true;
             btnStart.Enabled = false;
             this.Enabled = false;
         }
-        private void EndProcess()
-        {
-            Cursor.Current = Cursors.Default;
-            lblProcessing.Visible = false;
-            btnStart.Enabled = true;
-            this.Enabled = true;
-        }
+
+        #endregion
     }
 }
