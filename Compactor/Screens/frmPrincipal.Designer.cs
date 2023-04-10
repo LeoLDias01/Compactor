@@ -41,11 +41,14 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnErase = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.lblArchivesQtt = new System.Windows.Forms.Label();
+            this.lblProcessing = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
@@ -58,6 +61,9 @@
             // 
             // txtPath
             // 
+            this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPath.Enabled = false;
             this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPath.Location = new System.Drawing.Point(280, 74);
             this.txtPath.Name = "txtPath";
@@ -98,6 +104,9 @@
             // 
             // ltbArchives
             // 
+            this.ltbArchives.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ltbArchives.FormattingEnabled = true;
             this.ltbArchives.Location = new System.Drawing.Point(32, 107);
             this.ltbArchives.Name = "ltbArchives";
@@ -106,10 +115,11 @@
             // 
             // chkUnique
             // 
+            this.chkUnique.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkUnique.AutoSize = true;
             this.chkUnique.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkUnique.ForeColor = System.Drawing.Color.White;
-            this.chkUnique.Location = new System.Drawing.Point(32, 244);
+            this.chkUnique.Location = new System.Drawing.Point(32, 252);
             this.chkUnique.Name = "chkUnique";
             this.chkUnique.Size = new System.Drawing.Size(102, 19);
             this.chkUnique.TabIndex = 11;
@@ -118,10 +128,11 @@
             // 
             // chkDirectory
             // 
+            this.chkDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkDirectory.AutoSize = true;
             this.chkDirectory.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDirectory.ForeColor = System.Drawing.Color.White;
-            this.chkDirectory.Location = new System.Drawing.Point(32, 269);
+            this.chkDirectory.Location = new System.Drawing.Point(32, 277);
             this.chkDirectory.Name = "chkDirectory";
             this.chkDirectory.Size = new System.Drawing.Size(105, 19);
             this.chkDirectory.TabIndex = 12;
@@ -130,10 +141,11 @@
             // 
             // chkEraseOriginals
             // 
+            this.chkEraseOriginals.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkEraseOriginals.AutoSize = true;
             this.chkEraseOriginals.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEraseOriginals.ForeColor = System.Drawing.Color.White;
-            this.chkEraseOriginals.Location = new System.Drawing.Point(32, 294);
+            this.chkEraseOriginals.Location = new System.Drawing.Point(32, 302);
             this.chkEraseOriginals.Name = "chkEraseOriginals";
             this.chkEraseOriginals.Size = new System.Drawing.Size(160, 19);
             this.chkEraseOriginals.TabIndex = 13;
@@ -142,34 +154,40 @@
             // 
             // btnStart
             // 
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnStart.BackColor = System.Drawing.Color.White;
+            this.btnStart.Enabled = false;
             this.btnStart.FlatAppearance.BorderSize = 2;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(591, 241);
+            this.btnStart.Location = new System.Drawing.Point(591, 249);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(197, 33);
             this.btnStart.TabIndex = 14;
             this.btnStart.Text = "Processar";
             this.btnStart.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnErase
             // 
+            this.btnErase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnErase.BackColor = System.Drawing.Color.White;
             this.btnErase.FlatAppearance.BorderSize = 2;
             this.btnErase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnErase.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnErase.Location = new System.Drawing.Point(591, 280);
+            this.btnErase.Location = new System.Drawing.Point(591, 288);
             this.btnErase.Name = "btnErase";
             this.btnErase.Size = new System.Drawing.Size(197, 33);
             this.btnErase.TabIndex = 15;
             this.btnErase.Text = "Limpar";
             this.btnErase.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnErase.UseVisualStyleBackColor = false;
+            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
             // 
             // btnExit
             // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -181,12 +199,37 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // lblArchivesQtt
+            // 
+            this.lblArchivesQtt.AutoSize = true;
+            this.lblArchivesQtt.BackColor = System.Drawing.Color.Transparent;
+            this.lblArchivesQtt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArchivesQtt.ForeColor = System.Drawing.Color.White;
+            this.lblArchivesQtt.Location = new System.Drawing.Point(747, 225);
+            this.lblArchivesQtt.Name = "lblArchivesQtt";
+            this.lblArchivesQtt.Size = new System.Drawing.Size(19, 21);
+            this.lblArchivesQtt.TabIndex = 17;
+            this.lblArchivesQtt.Text = "0";
+            // 
+            // lblProcessing
+            // 
+            this.lblProcessing.AutoSize = true;
+            this.lblProcessing.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            this.lblProcessing.ForeColor = System.Drawing.Color.White;
+            this.lblProcessing.Location = new System.Drawing.Point(313, 277);
+            this.lblProcessing.Name = "lblProcessing";
+            this.lblProcessing.Size = new System.Drawing.Size(152, 30);
+            this.lblProcessing.TabIndex = 18;
+            this.lblProcessing.Text = "Processando...";
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(52)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(800, 337);
+            this.Controls.Add(this.lblProcessing);
+            this.Controls.Add(this.lblArchivesQtt);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnErase);
             this.Controls.Add(this.btnStart);
@@ -201,6 +244,7 @@
             this.Controls.Add(this.lblTitlePath);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
@@ -222,5 +266,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnErase;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblArchivesQtt;
+        private System.Windows.Forms.Label lblProcessing;
     }
 }
