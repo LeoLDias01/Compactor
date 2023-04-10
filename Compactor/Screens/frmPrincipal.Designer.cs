@@ -52,7 +52,7 @@
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(751, 68);
+            this.btnSearch.Location = new System.Drawing.Point(700, 68);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(37, 33);
             this.btnSearch.TabIndex = 7;
@@ -67,7 +67,7 @@
             this.txtPath.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPath.Location = new System.Drawing.Point(280, 74);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(465, 23);
+            this.txtPath.Size = new System.Drawing.Size(414, 23);
             this.txtPath.TabIndex = 6;
             // 
             // lblTitlePath
@@ -110,7 +110,7 @@
             this.ltbArchives.FormattingEnabled = true;
             this.ltbArchives.Location = new System.Drawing.Point(32, 107);
             this.ltbArchives.Name = "ltbArchives";
-            this.ltbArchives.Size = new System.Drawing.Size(757, 121);
+            this.ltbArchives.Size = new System.Drawing.Size(706, 147);
             this.ltbArchives.TabIndex = 10;
             // 
             // chkUnique
@@ -119,7 +119,7 @@
             this.chkUnique.AutoSize = true;
             this.chkUnique.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkUnique.ForeColor = System.Drawing.Color.White;
-            this.chkUnique.Location = new System.Drawing.Point(32, 252);
+            this.chkUnique.Location = new System.Drawing.Point(32, 280);
             this.chkUnique.Name = "chkUnique";
             this.chkUnique.Size = new System.Drawing.Size(102, 19);
             this.chkUnique.TabIndex = 11;
@@ -132,7 +132,7 @@
             this.chkDirectory.AutoSize = true;
             this.chkDirectory.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkDirectory.ForeColor = System.Drawing.Color.White;
-            this.chkDirectory.Location = new System.Drawing.Point(32, 277);
+            this.chkDirectory.Location = new System.Drawing.Point(32, 305);
             this.chkDirectory.Name = "chkDirectory";
             this.chkDirectory.Size = new System.Drawing.Size(105, 19);
             this.chkDirectory.TabIndex = 12;
@@ -145,7 +145,7 @@
             this.chkEraseOriginals.AutoSize = true;
             this.chkEraseOriginals.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEraseOriginals.ForeColor = System.Drawing.Color.White;
-            this.chkEraseOriginals.Location = new System.Drawing.Point(32, 302);
+            this.chkEraseOriginals.Location = new System.Drawing.Point(32, 330);
             this.chkEraseOriginals.Name = "chkEraseOriginals";
             this.chkEraseOriginals.Size = new System.Drawing.Size(160, 19);
             this.chkEraseOriginals.TabIndex = 13;
@@ -160,7 +160,7 @@
             this.btnStart.FlatAppearance.BorderSize = 2;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(591, 249);
+            this.btnStart.Location = new System.Drawing.Point(333, 316);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(197, 33);
             this.btnStart.TabIndex = 14;
@@ -176,7 +176,7 @@
             this.btnErase.FlatAppearance.BorderSize = 2;
             this.btnErase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnErase.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnErase.Location = new System.Drawing.Point(591, 288);
+            this.btnErase.Location = new System.Drawing.Point(540, 316);
             this.btnErase.Name = "btnErase";
             this.btnErase.Size = new System.Drawing.Size(197, 33);
             this.btnErase.TabIndex = 15;
@@ -192,7 +192,7 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(743, 9);
+            this.btnExit.Location = new System.Drawing.Point(692, 9);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(46, 46);
             this.btnExit.TabIndex = 16;
@@ -205,18 +205,18 @@
             this.lblArchivesQtt.BackColor = System.Drawing.Color.Transparent;
             this.lblArchivesQtt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArchivesQtt.ForeColor = System.Drawing.Color.White;
-            this.lblArchivesQtt.Location = new System.Drawing.Point(747, 225);
+            this.lblArchivesQtt.Location = new System.Drawing.Point(646, 257);
             this.lblArchivesQtt.Name = "lblArchivesQtt";
-            this.lblArchivesQtt.Size = new System.Drawing.Size(19, 21);
+            this.lblArchivesQtt.Size = new System.Drawing.Size(62, 21);
             this.lblArchivesQtt.TabIndex = 17;
-            this.lblArchivesQtt.Text = "0";
+            this.lblArchivesQtt.Text = "Total: 0";
             // 
             // lblProcessing
             // 
             this.lblProcessing.AutoSize = true;
             this.lblProcessing.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             this.lblProcessing.ForeColor = System.Drawing.Color.White;
-            this.lblProcessing.Location = new System.Drawing.Point(313, 277);
+            this.lblProcessing.Location = new System.Drawing.Point(474, 25);
             this.lblProcessing.Name = "lblProcessing";
             this.lblProcessing.Size = new System.Drawing.Size(152, 30);
             this.lblProcessing.TabIndex = 18;
@@ -227,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(52)))), ((int)(((byte)(72)))));
-            this.ClientSize = new System.Drawing.Size(800, 337);
+            this.ClientSize = new System.Drawing.Size(749, 365);
             this.Controls.Add(this.lblProcessing);
             this.Controls.Add(this.lblArchivesQtt);
             this.Controls.Add(this.btnExit);

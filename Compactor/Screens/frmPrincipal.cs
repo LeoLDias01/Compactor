@@ -72,19 +72,25 @@ namespace Compactor.Screens
                     Processing();
                     Cursor.Current = Cursors.WaitCursor;
                     
+                    if(chkUnique.Checked)
                     using (ZipArchive zip = ZipFile.Open($"{txtPath.Text}.zip", ZipArchiveMode.Create))
                     {
                         foreach (FileInfo files in archive)
                         {
-
                             zip.CreateEntry(files.Name);
-
                         }
                     }
+                    else
+                        foreach (FileInfo files in archive)
+                        {
+                            using (ZipArchive zip = ZipFile.Open($"{files.Name}.zip", ZipArchiveMode.Create))
+                            {
+                                zip.CreateEntry(files.Name);
+                            }
+                        }
                 }
             }
-            
-
+            EndProcess();
         }
         private void Processing() 
         {
@@ -92,6 +98,13 @@ namespace Compactor.Screens
             lblProcessing.Visible = true;
             btnStart.Enabled = false;
             this.Enabled = false;
+        }
+        private void EndProcess()
+        {
+            Cursor.Current = Cursors.Default;
+            lblProcessing.Visible = false;
+            btnStart.Enabled = false;
+            this.Enabled = true;
         }
     }
 }
