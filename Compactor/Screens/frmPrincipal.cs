@@ -58,7 +58,6 @@ namespace Compactor.Screens
         {
             ltbArchives.DataSource = null;
             txtPath.Clear();
-            chkDirectory.Checked = false;
             chkEraseOriginals.Checked = false;
             chkUnique.Checked = false;
         }
@@ -69,30 +68,37 @@ namespace Compactor.Screens
             {
                 if (MessageBox.Show("Deseja realmente compactar os arquivos deste diretório?", "AVISO!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Processing();
-                    Cursor.Current = Cursors.WaitCursor;
-                    
-                    if(chkUnique.Checked)
-                    using (ZipArchive zip = ZipFile.Open($"{txtPath.Text}.zip", ZipArchiveMode.Create))
+                    StartProcess();
+
+                    if (chkUnique.Checked)
                     {
-                        foreach (FileInfo files in archive)
+                        using (ZipArchive zip = ZipFile.Open($"{txtPath.Text}.zip", ZipArchiveMode.Create))
                         {
-                            zip.CreateEntry(files.Name);
+                            foreach (FileInfo files in archive)
+                            {
+                                zip.CreateEntry(files.Name);
+                                if (chkEraseOriginals.Checked)
+                                    File.Delete(files.FullName);
+                            }
                         }
                     }
                     else
+                    {
                         foreach (FileInfo files in archive)
                         {
-                            using (ZipArchive zip = ZipFile.Open($"{files.Name}.zip", ZipArchiveMode.Create))
+                            using (ZipArchive zip = ZipFile.Open($"{files.DirectoryName}\\{files.Name.Remove(files.Name.Length-4)}.zip", ZipArchiveMode.Create))
                             {
                                 zip.CreateEntry(files.Name);
                             }
+                            if (chkEraseOriginals.Checked)
+                                File.Delete(files.FullName);
                         }
+                    }
                 }
             }
             EndProcess();
         }
-        private void Processing() 
+        private void StartProcess() 
         {
             Cursor.Current = Cursors.WaitCursor;
             lblProcessing.Visible = true;

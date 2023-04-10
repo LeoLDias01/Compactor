@@ -36,13 +36,13 @@
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.ltbArchives = new System.Windows.Forms.ListBox();
             this.chkUnique = new System.Windows.Forms.CheckBox();
-            this.chkDirectory = new System.Windows.Forms.CheckBox();
             this.chkEraseOriginals = new System.Windows.Forms.CheckBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnErase = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblArchivesQtt = new System.Windows.Forms.Label();
             this.lblProcessing = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,25 +119,12 @@
             this.chkUnique.AutoSize = true;
             this.chkUnique.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkUnique.ForeColor = System.Drawing.Color.White;
-            this.chkUnique.Location = new System.Drawing.Point(32, 280);
+            this.chkUnique.Location = new System.Drawing.Point(32, 291);
             this.chkUnique.Name = "chkUnique";
             this.chkUnique.Size = new System.Drawing.Size(102, 19);
             this.chkUnique.TabIndex = 11;
             this.chkUnique.Text = "Arquivo Único";
             this.chkUnique.UseVisualStyleBackColor = true;
-            // 
-            // chkDirectory
-            // 
-            this.chkDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkDirectory.AutoSize = true;
-            this.chkDirectory.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkDirectory.ForeColor = System.Drawing.Color.White;
-            this.chkDirectory.Location = new System.Drawing.Point(32, 305);
-            this.chkDirectory.Name = "chkDirectory";
-            this.chkDirectory.Size = new System.Drawing.Size(105, 19);
-            this.chkDirectory.TabIndex = 12;
-            this.chkDirectory.Text = "Criar subpastas";
-            this.chkDirectory.UseVisualStyleBackColor = true;
             // 
             // chkEraseOriginals
             // 
@@ -145,7 +132,7 @@
             this.chkEraseOriginals.AutoSize = true;
             this.chkEraseOriginals.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkEraseOriginals.ForeColor = System.Drawing.Color.White;
-            this.chkEraseOriginals.Location = new System.Drawing.Point(32, 330);
+            this.chkEraseOriginals.Location = new System.Drawing.Point(32, 316);
             this.chkEraseOriginals.Name = "chkEraseOriginals";
             this.chkEraseOriginals.Size = new System.Drawing.Size(160, 19);
             this.chkEraseOriginals.TabIndex = 13;
@@ -160,7 +147,7 @@
             this.btnStart.FlatAppearance.BorderSize = 2;
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(333, 316);
+            this.btnStart.Location = new System.Drawing.Point(541, 277);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(197, 33);
             this.btnStart.TabIndex = 14;
@@ -205,7 +192,7 @@
             this.lblArchivesQtt.BackColor = System.Drawing.Color.Transparent;
             this.lblArchivesQtt.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArchivesQtt.ForeColor = System.Drawing.Color.White;
-            this.lblArchivesQtt.Location = new System.Drawing.Point(646, 257);
+            this.lblArchivesQtt.Location = new System.Drawing.Point(28, 257);
             this.lblArchivesQtt.Name = "lblArchivesQtt";
             this.lblArchivesQtt.Size = new System.Drawing.Size(62, 21);
             this.lblArchivesQtt.TabIndex = 17;
@@ -221,6 +208,20 @@
             this.lblProcessing.Size = new System.Drawing.Size(152, 30);
             this.lblProcessing.TabIndex = 18;
             this.lblProcessing.Text = "Processando...";
+            this.lblProcessing.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(330, 343);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Created by: Leonardo Leal";
             // 
             // frmPrincipal
             // 
@@ -228,13 +229,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(52)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(749, 365);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblProcessing);
             this.Controls.Add(this.lblArchivesQtt);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnErase);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.chkEraseOriginals);
-            this.Controls.Add(this.chkDirectory);
             this.Controls.Add(this.chkUnique);
             this.Controls.Add(this.ltbArchives);
             this.Controls.Add(this.pcbLogo);
@@ -261,12 +262,12 @@
         private System.Windows.Forms.PictureBox pcbLogo;
         private System.Windows.Forms.ListBox ltbArchives;
         private System.Windows.Forms.CheckBox chkUnique;
-        private System.Windows.Forms.CheckBox chkDirectory;
         private System.Windows.Forms.CheckBox chkEraseOriginals;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnErase;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblArchivesQtt;
         private System.Windows.Forms.Label lblProcessing;
+        private System.Windows.Forms.Label label1;
     }
 }
